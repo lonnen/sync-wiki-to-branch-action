@@ -5,6 +5,9 @@ inputs:
     description: 'The name of the repository branch that should track the wiki'
     default: 'wiki'
     required: true
+  github_token:
+    description: 'A GitHub token with permissions to read the wiki and push to the branch'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
