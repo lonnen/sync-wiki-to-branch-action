@@ -6,7 +6,7 @@ echo "${{ github.repository }}.git"
 echo "${{ github.repository }}.wiki.git"
 
 # this isn't right, but somethign like this could be...
-# git clone ${{ github.github_server_url }}/${{ github.repository }}.git repo
-# cd repo
-# git remote add ${{ github.github_server_url }}/${{ github.repository }}.wiki.git
-# git push repo master: ${{ TARGET_BRANCH }}
+# git clone ${{ github.github_server_url }}/${{ github.repository }}.wiki.git wiki
+# cd wiki
+# git remote add main ${{ github.github_server_url }}/${{ github.repository }}.git
+# git push main master:${{ TARGET_BRANCH }}
