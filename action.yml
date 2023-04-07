@@ -11,5 +11,5 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.branch }}
+  env:
+    TARGET_BRANCH: ${{ inputs.branch }}
