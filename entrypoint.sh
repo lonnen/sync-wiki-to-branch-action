@@ -1,12 +1,8 @@
 #!/bin/sh -l
 
-https://github.com/lonnen/legion-of-ravens.wiki.git
+GITHUB_FULL_REPO_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}"
 
-echo "${{ github.repository }}.git"
-echo "${{ github.repository }}.wiki.git"
-
-# this isn't right, but somethign like this could be...
-# git clone ${{ github.github_server_url }}/${{ github.repository }}.wiki.git wiki
-# cd wiki
-# git remote add main ${{ github.github_server_url }}/${{ github.repository }}.git
-# git push main master:${{ TARGET_BRANCH }}
+git clone "${GITHUB_FULL_REPO_URL}".wiki.git wiki
+cd wiki || exit
+git remote add main "${GITHUB_FULL_REPO_URL}".git
+git push main master:"${TARGET_BRANCH}"
