@@ -7,9 +7,8 @@ inputs:
     default: 'wiki'
     required: true
   github_token:
-    description: 'A GitHub token with permissions to read the wiki and push to the named branch'
+    description: 'A GitHub token with permissions to read the wiki and push to the named branch. You will have to create one. It's advisable to create one narrowly scoped to the specific repository you're setting this up for, with only content:read/write permissions'
     required: true
-    default: ${{ github.token }}
 
 runs:
   using: 'docker'
