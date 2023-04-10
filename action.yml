@@ -16,3 +16,4 @@ runs:
   image: 'Dockerfile'
   env:
     TARGET_BRANCH: ${{ inputs.branch }}
+    TOKEN: ${{ inputs.github_token }}
