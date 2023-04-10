@@ -1,8 +1,7 @@
 #!/bin/sh -l
 set -e
 
-GITHUB_FULL_REPO_URL="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}"
-GITHUB_TOKEN_AND_REPO_URL="https://${TOKEN}@github.com"
+GITHUB_TOKEN_AND_REPO_URL="https://${TOKEN}@github.com/${GITHUB_REPOSITORY}"
 
 git clone "${GITHUB_TOKEN_AND_REPO_URL}".wiki.git wiki
 cd wiki
