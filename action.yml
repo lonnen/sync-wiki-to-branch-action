@@ -1,5 +1,8 @@
 name: 'Sync wiki to a branch'
 description: 'Synchronize wiki updates with a branch in the repository'
+branding:
+  icon: 'archive'
+  color: 'purple'
 
 inputs:
   branch:
