@@ -17,6 +17,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-cd wiki
+cd wiki || echo "cannot change into repository directory" && exit 1
+
 git remote add repo "${GITHUB_TOKEN_AND_REPO_URL}".git
 git push repo master:"${TARGET_BRANCH}"
