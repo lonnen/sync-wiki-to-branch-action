@@ -20,7 +20,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lonnen/sync-wiki-to-branch-action@v1.0.0
+      - uses: lonnen/sync-wiki-to-branch-action@v1.2.3
         with:
           branch: wiki
           github_token: ${{ secrets.GITHUB_TOKEN }}
