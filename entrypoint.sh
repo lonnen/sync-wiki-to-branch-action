@@ -19,5 +19,10 @@ fi
 
 cd wiki || echo "cannot change into repository directory" && exit 1
 
-git remote add repo "${GITHUB_TOKEN_AND_REPO_URL}".git
+if ! git remote add repo "${GITHUB_TOKEN_AND_REPO_URL}".git; then
+    echo "Failed to add remote ${GITHUB_TOKEN_AND_REPO_URL}.git"
+    echo "please check your actions configuration"
+    exit 1
+fi
+
 git push repo master:"${TARGET_BRANCH}"
