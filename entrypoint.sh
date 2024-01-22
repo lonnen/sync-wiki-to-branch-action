@@ -25,4 +25,12 @@ if ! git remote add repo "${GITHUB_TOKEN_AND_REPO_URL}".git; then
     exit 1
 fi
 
-git push repo master:"${TARGET_BRANCH}"
+if git push repo master:"${TARGET_BRANCH}"; then
+    echo "Failed to push the wiki's master branch from $GITHUB_TOKEN_AND_REPO_URL.git.wiki to branch $TARGET_BRANCH of $GITHUB_TOKEN_AND_REPO_URL.git"
+    echo "please check that $TARGET_BRANCH can receive a fast-forward push from the wiki"
+    echo "this may happen if you've updated the branch without going through the wiki,"
+    echo "maybe when updating a dotfile or similar that doesn't show up in the GitHub wiki UI."
+    echo "You may need to check out the wiki yourself and force push it over $TARGET_BRANCH to fix."
+    echo "Please proceed carefully, force pushing may result in data loss."
+    exit 1
+fi
